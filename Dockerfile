@@ -1,21 +1,14 @@
-FROM node:12.18.3
+FROM node:14.8.0
 
-WORKDIR /app
-# установка зависимостей
-# символ астериск ("*") используется для того чтобы по возможности
-# скопировать оба файла: package.json и package-lock.json
-#COPY package*.json /app
-COPY . /app
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+
+WORKDIR /home/node/app
+
+USER node
+COPY --chown=node:node . /home/node/app
 RUN  npm install
-#RUN mv ./node_modules/* /app/node_modules/
-# Если вы создаете сборку для продакшн
 # RUN npm ci --only=production
-
-# копируем исходный код
-
 
 EXPOSE 8080
-#RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
+
 CMD [ "npm", "start" ]
