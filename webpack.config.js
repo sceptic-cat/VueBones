@@ -1,21 +1,21 @@
 const path = require('path');
-//const HtmlWebpackPlugin = require('html-webpack-plugin'); //Плагин для автоматического добавления ссылки на сгенерированный бандл
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //Плагин для автоматического добавления ссылки на сгенерированный бандл
 const {CleanWebpackPlugin} = require('clean-webpack-plugin'); //Плагин автоматической отчистки старых бандлов
 
 module.exports = {
-    context: path.resolve(__dirname, 'public'),
+    context: path.resolve(__dirname, 'dist'),
     mode: 'development', //TODO:: продумать как переключаться на бой
-    entry: './public/javascripts/main.js',
+    entry: path.resolve(__dirname, 'public/javascripts/main.js'),
     output: {
-        //filename: '[name].[contenthash].js',
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'public/javascripts')
+        filename: '[name].[contenthash].js',
+        //filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
     },
     plugins: [
-      /*  new HtmlWebpackPlugin({
-            template: '!!ejs-compiled-loader!./views/index.ejs',
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'public/index.template.html'),
             inject: 'body'
-        }),*/
+        }),
         new CleanWebpackPlugin()
     ],
     module: {
