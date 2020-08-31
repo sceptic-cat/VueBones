@@ -77,3 +77,6 @@ typings/
 
 # phpstorm project files
 .idea
+
+# папка куда складываем сгенерированные вебпаком ассеты
+dist/

@@ -22,7 +22,23 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ['style-loader', 'css-loader'] //Порядок важен (идет справа на лево)
+            },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                use: ['file-loader']
+            },
+            {
+                test: /\.(ttf|woff|woff2|eot)$/i,
+                use: ['file-loader']
+            },
+            {
+                test: /\.xml$/i,
+                use: ['xml-loader']
+            },
+            {
+                test: /\.csv$/i,
+                use: ['csv-loader']
             }
         ]
     }
