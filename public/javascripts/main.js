@@ -3,6 +3,8 @@ import 'popper';*/
 import 'bootstrap';
 import '../stylesheets/style.css';
 import '../stylesheets/bootstrap.theme.min.css';
+//import Vue from 'vue/dist/vue';
+import Vue from '@Vue';
 //import '../images/earth.png';
 import xml from '../other/1.xml';
 

@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin'); //Копировани
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin'); //плагин для минимизации css
 const TerserWebpackPlugin = require('terser-webpack-plugin'); //Плагин для минимизации js
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 //const isDev = process.env.NODE_ENV === 'development';
 const isDev = true;
@@ -41,8 +42,8 @@ const jsLoaders = () => {
 
   /*  if (isDev) {
         loaders.push('eslint-loader');
-    }
-*/
+    }*/
+
     return loaders;
 };
 
@@ -58,7 +59,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.png'], //Расширения которые должен обрабатывать webpack (позволяет не дописывать расширения при импорте модулей и файлов)
         alias: { //Прописываем алиасы до путей импортируемых библиотек
-            "@components": path.resolve(__dirname, 'public/javascripts/components')
+            "@components": path.resolve(__dirname, 'public/javascripts/components'),
+            "@Vue": path.resolve(__dirname, 'node_modules/vue/dist/vue.js')
         }
     },
     //Если используем одну и ту же библиотеку разных точках входа, указываем что бы она была вынесена в отдельный файл, т.к. иначе копия библиотеки будет в каждом скрипте
@@ -83,7 +85,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: filename('css')
-        })
+        }),
+        new VueLoaderPlugin()
     ],
     module: {
         rules: [
@@ -117,6 +120,10 @@ module.exports = {
             {
                 test: /\.csv$/i,
                 use: ['csv-loader']
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             },
             {
                 test: /\.js$/,
