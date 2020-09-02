@@ -29,9 +29,26 @@ const optimization = () => {
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
+const jsLoaders = () => {
+    const loaders = [{
+        loader: 'babel-loader',
+        options: {
+            presets: [
+                '@babel/preset-env'
+            ]
+        }
+    }];
+
+  /*  if (isDev) {
+        loaders.push('eslint-loader');
+    }
+*/
+    return loaders;
+};
+
 module.exports = {
     context: path.resolve(__dirname, 'dist'),
-    mode: 'development', //TODO:: продумать как переключаться на бой
+    mode: isDev ? 'development' : 'production',
     entry: path.resolve(__dirname, 'public/javascripts/main.js'),
     output: {
         filename: filename('js'),
@@ -104,14 +121,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env'
-                        ]
-                    }
-                }
+                use: jsLoaders()
             }
         ]
     }
