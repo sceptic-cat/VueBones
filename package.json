@@ -9,12 +9,12 @@
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
     "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.16.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "morgan": "~1.9.1",
     "normalize.css": "^8.0.1",
