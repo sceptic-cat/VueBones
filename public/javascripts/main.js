@@ -6,6 +6,7 @@ import Vue from 'vue'
 //import '../images/earth.png'
 //import xml from '../other/1.xml'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import router from './router'
 
 //console.log(xml);
 
@@ -17,5 +18,6 @@ import App from './App.vue'
 //Vue.config.productionTip = false;
 
 new Vue({
+    router,
     render: h => h(App)
 }).$mount('#app');

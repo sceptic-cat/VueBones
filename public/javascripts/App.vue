@@ -2,7 +2,11 @@
     <div id="app">
         <Greeting />
         <LearnMore v-bind:showLearnMore="showLearnMore" />
+
+        <router-view />
     </div>
+
+
 </template>
 
 <script>

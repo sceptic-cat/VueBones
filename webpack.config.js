@@ -60,6 +60,7 @@ module.exports = {
         extensions: ['.js', '.json', '.png'], //Расширения которые должен обрабатывать webpack (позволяет не дописывать расширения при импорте модулей и файлов)
         alias: { //Прописываем алиасы до путей импортируемых библиотек
             "@components": path.resolve(__dirname, 'public/javascripts/components'),
+            "@views": path.resolve(__dirname, 'public/javascripts/views'),
            // "@Vue": path.resolve(__dirname, 'node_modules/vue/dist/vue.js'),
             vue$: path.resolve(__dirname, 'node_modules/vue/dist/vue.runtime.esm.js')
         }
