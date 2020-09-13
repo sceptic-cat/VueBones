@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="vb-navbar">
         <b-navbar toggleable="lg" type="dark" variant="info">
             <b-navbar-brand href="#"><router-link to="/">VueBones</router-link></b-navbar-brand>
 
@@ -44,5 +44,13 @@
 </script>
 
 <style scoped>
+    .vb-navbar a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .vb-navbar a:hover {
+        color: #18bc9c;
+    }
 
 </style>

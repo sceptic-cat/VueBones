@@ -15,9 +15,9 @@
 </template>
 
 <script>
-    import Greeting from '@components/Greeting.vue'
-    import LearnMore from '@components/LearnMore.vue'
-    import Navbar from '@components/Navbar.vue'
+    import Greeting from '@components/Greeting'
+    import LearnMore from '@components/LearnMore'
+    import Navbar from '@components/Navbar'
 
     export default {
         name: 'App',

@@ -13,7 +13,7 @@ import router from './router'
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
-import App from './App.vue'
+import App from './App'
 
 //Vue.config.productionTip = false;
 

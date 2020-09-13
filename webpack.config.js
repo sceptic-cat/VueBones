@@ -57,7 +57,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js', '.json', '.png'], //Расширения которые должен обрабатывать webpack (позволяет не дописывать расширения при импорте модулей и файлов)
+        extensions: ['.js', '.json', '.png', '.vue'], //Расширения которые должен обрабатывать webpack (позволяет не дописывать расширения при импорте модулей и файлов)
         alias: { //Прописываем алиасы до путей импортируемых библиотек
             "@components": path.resolve(__dirname, 'public/javascripts/components'),
             "@views": path.resolve(__dirname, 'public/javascripts/views'),
