@@ -1,9 +1,14 @@
 <template>
     <div id="app">
-        <Greeting />
-        <LearnMore v-bind:showLearnMore="showLearnMore" />
+<!--        <Greeting />-->
+<!--        <LearnMore v-bind:showLearnMore="showLearnMore" />-->
+<!--        -->
+        <Navbar />
 
-        <router-view />
+        <b-container>
+            <router-view />
+        </b-container>
+
     </div>
 
 
@@ -11,13 +16,15 @@
 
 <script>
     import Greeting from '@components/Greeting.vue'
-    import LearnMore from "@components/LearnMore.vue";
+    import LearnMore from '@components/LearnMore.vue'
+    import Navbar from '@components/Navbar.vue'
 
     export default {
         name: 'App',
         components: {
             Greeting,
-            LearnMore
+            LearnMore,
+            Navbar
         },
         data() {
             return {
